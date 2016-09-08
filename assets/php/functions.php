@@ -489,7 +489,7 @@ function makeRecenlyReleased()
 	$mediaXML = simplexml_load_file('http://'.$plex_server_ip.':'.$plex_port.$mediaKey);
 	$movieTitle = $mediaXML->Video['title'];
 	$movieArt = $mediaXML->Video['thumb'];
-	echo '<img src="plex.php?img='.urlencode('http://'.$plex_server_ip.':'.$plex_port.$movieArt).'" alt="'.$movieTitle.'">';
+	echo '<img src="http://'.$plex_server_ip.':'.$plex_port.$movieArt.'" alt="'.$movieTitle.'">';
 	echo '</div>'; // Close item div
 	$i=1;
 	for ( ; ; ) {
@@ -500,7 +500,7 @@ function makeRecenlyReleased()
 		$movieArt = $mediaXML->Video['thumb'];
 		$movieYear = $mediaXML->Video['year'];
 		echo '<div class="item">';
-		echo '<img src="plex.php?img='.urlencode('http://'.$plex_server_ip.':'.$plex_port.$movieArt).'" alt="'.$movieTitle.'">';
+		echo '<img src="http://'.$plex_server_ip.':'.$plex_port.$movieArt.'" alt="'.$movieTitle.'">';
 		//echo '<div class="carousel-caption">';
 		//echo '<h3>'.$movieTitle.$movieYear.'</h3>';
 		//echo '<p>Summary</p>';
@@ -565,7 +565,7 @@ function makeNowPlaying()
 					$movieSummary = limitWords($mediaXML->Video['summary'],50); // Limit to 50 words
 					$movieSummary .= "..."; // Add ellipsis
 				endif;
-				echo '<img src="plex.php?img='.urlencode('http://'.$plex_server_ip.':'.$plex_port.$movieArt).'" alt="'.$movieTitle.'">';
+				echo '<img src="http://'.$plex_server_ip.':'.$plex_port.$movieArt.'" alt="'.$movieTitle.'">';
 				// Make now playing progress bar
 				//echo 'div id="now-playing-progress-bar">';
 				echo '<div class="progress now-playing-progress-bar">';
@@ -601,7 +601,7 @@ function makeNowPlaying()
 				$device = $plexSessionXML->Video[$i-1]->Player['title'];
 				$state = $plexSessionXML->Video[$i-1]->Player['state'];
 				//echo '<div class="img-overlay">';
-				echo '<img src="plex.php?img='.urlencode('http://'.$plex_server_ip.':'.$plex_port.$tvArt).'" alt="'.$showTitle.'">';
+				echo '<img src="http://'.$plex_server_ip.':'.$plex_port.$tvArt.'" alt="'.$showTitle.'">';
 				// Make now playing progress bar
 				//echo 'div id="now-playing-progress-bar">';
 				echo '<div class="progress now-playing-progress-bar">';
