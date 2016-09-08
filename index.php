@@ -10,7 +10,8 @@
 	$detect = new Mobile_Detect;
 
 	// Import variables from config file
-	$config_path = '/Library/Server/Web/Data/Sites/config.ini'; //path to config file, recommend you place it outside of web root
+//	$config_path = '/Library/Server/Web/Data/Sites/config.ini'; //path to config file, recommend you place it outside of web root
+	$config_path = './config.ini'; //path to config file, recommend you place it outside of web root
 	$config = parse_ini_file($config_path);
 
 	// Display Options
